@@ -1,8 +1,30 @@
 const express=require('express');
+const connectDB = require('./config/db');
+
 
 const app=express();
 
+
+//Connect Database
+connectDB();
+
+// Init Middleware
+app.use(express.json({extended:false}));
+
 app.get('/',(req,res)=>res.send('API Running'));
+
+app.use('/api/users',require('./routes/api/users'));
+app.use('/api/auth',require('./routes/api/auth'));
+app.use('/api/admin',require('./routes/api/admin'));
+// app.use('/api/bus',require('./routes/api/bus'));
+app.use('/api/buses',require('./routes/api/buses'));
+app.use('/api/ticket',require('./routes/api/ticket'));
+
+
+
+
+
+
 
 
 const PORT=process.env.PORT || 4000;

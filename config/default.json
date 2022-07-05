@@ -1,0 +1,3 @@
+{"mongoURI":"mongodb+srv://Monika:Monika123@redbus.yujc3rw.mongodb.net/?retryWrites=true&w=majority",
+ "jwtSecret":"mysecrettoken"
+}
